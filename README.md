@@ -30,7 +30,7 @@
     - Their job is to: listen for fetch requests, push messages, events, etc
 
     - Never cache Service Workers, if you do newer workers can't be updated. "app.js"
-    
+    - Life Cycle of WS.js: https://webdev.imgix.net/offline-cookbook/cm-on-install-dep.png
 
 ### Service Worker Lifecycle
     - sw.js access to different scopes where it's created. Place in root -> control all.
