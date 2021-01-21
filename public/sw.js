@@ -1,7 +1,7 @@
 
 // Site's static cache files
 const staticCacheName = "site-static-v1";
-const dynamicCache = "site-dynamic-v2";
+const dynamicCache = "site-dynamic-v1.2";
 
 // Limit Cache Items - Function
 const limitCacheSize = (name, size) => {
@@ -50,7 +50,7 @@ self.addEventListener("install", evt =>
             // cache.add()
     
             // 2. Reach to the server and get ALL resources
-            console.log("caching assets...");
+            // console.log("caching assets...");
             cache.addAll(assets);
         })
     );
@@ -64,7 +64,7 @@ self.addEventListener("activate", evt => {
     evt.waitUntil(
         caches.keys()
         .then( keys => {
-            console.log(keys);  // These Keys are cache stores name like: "site-static-v1"
+            // console.log(keys);  // These Keys are cache stores name like: "site-static-v1"
             // Compare the current version with these keys if not match delete. means delete old ones
 
             // Delete all old caches

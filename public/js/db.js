@@ -31,6 +31,7 @@ db.collection("menu").onSnapshot((snapshot) => {
         else if(change.type === "removed")
         {
             // Remove the document data from the webpage
+            removeRecipe(change.doc.id);
         }
         else if(change.type === "modified")
         {
@@ -38,7 +39,6 @@ db.collection("menu").onSnapshot((snapshot) => {
         }
     });
 });
-
 
 // Add New Manu Item
 const form = document.getElementById("add-menu");
@@ -61,4 +61,14 @@ form.addEventListener("submit", evt => {
     form.title.value = "";
     form.ingredients.value = "";
     form.price.value = "";
+});
+
+// Delete a menu item
+const menuContainer = document.getElementById("menu");
+menuContainer.addEventListener("click", evt => {
+    if(evt.target.tagName === "BUTTON")
+    {
+        const id = evt.target.getAttribute("data-id");
+        db.collection("menu").doc(id).delete();
+    }
 });
