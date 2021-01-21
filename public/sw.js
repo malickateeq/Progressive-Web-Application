@@ -1,7 +1,7 @@
 
 // Site's static cache files
 const staticCacheName = "site-static-v1";
-const dynamicCache = "site-dynamic-v1.2";
+const dynamicCache = "site-dynamic-v7.2";
 
 // Limit Cache Items - Function
 const limitCacheSize = (name, size) => {

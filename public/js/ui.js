@@ -5,7 +5,7 @@ const menu = document.querySelector(".menu");
 const renderMenu = (data, id) =>{
 
     const html = `
-        <div class="col-md-4" menu-i data-id="${id}">
+        <div class="col-md-4 menues" data-id="${id}">
             <div class="card shadow-sm">
                 <img src="img/food.png" alt="" class="bd-placeholder-img card-img-top" width="100%" height="225">
                 <div class="card-body">
@@ -30,8 +30,9 @@ const renderMenu = (data, id) =>{
 
 // Remove recipe from DOM
 const removeRecipe = (id) => {
-    const recipe = document.querySelector(`.menu-i[data-id=${id}]`);
-    recipe.remove();
+    const menu = document.querySelector(`.menues[data-id=${id}]`);
+    console.log(menu);
+    menu.remove();
 };
 
 {/* <button type="button" class="btn btn-sm btn-outline-secondary" data-id="${id}">View</button> */}
